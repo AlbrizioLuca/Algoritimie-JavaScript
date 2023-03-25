@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="recup_fonction"></div>
+    <script>
+
+        /*
+        Fabriquer une animation qui fait "tourner" un texte en enlevant periodiquement (100ms) une lettre à la fin d'une message et en la replaçant au début de la message :
+        "ma super message "
+        " ma super message"
+        "e ma super chain"
+        'ne ma super chai"
+        "ine ma super cha"
+        "aine ma super ch"
+        etc ...
+        */
+
+        // Définir une variable pour stocker la chaine saisie
+        let message= "j'ai galéré plus de quatre heures pour ce fichu message ! "
+        // Définir la fonction 
+        function superchain() {
+            // Transformer la message en tableau
+            let array = message.split("");
+                // Supprimer et stocker le dernier élément du tableau
+                let last = array.pop();
+                // Inserer en début de tableau 
+                array.unshift(last);
+                // Transforme le tableau en message
+                message = array.join('');
+                // Definir variable pour renvoyer la fonction dans la page HTML 
+                let affichage= document.getElementById("recup_fonction");
+                // Afficher le résultat
+                affichage.innerHTML = message;
+        }
+
+        // Définir un intervalle en ms, et appeller la fonction
+        let intervalID = setInterval(superchain,200);
+    </script>
+</body>
+</html>

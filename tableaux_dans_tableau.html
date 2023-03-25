@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chercher des tableaux dans un tableau</title>
+</head>
+<body>
+    <script>
+        // Faire une fonction JS pour explorer le tableau complexe 
+        // Afficher chaque element affichable (chaine ou nombre)
+        // Entrer dans chaque tableau interne pour le parcourir
+
+        let arr1 = [['1','2','3'], 24, 18000];
+        let arr2 = ["EFG", 30, [[1,2],[3,4],[5,6]]];
+        let arr3 = ["IJK", 28, 41000];
+        let arr4 = ["EFG", [['A','B'],['C','D']], 28000];
+        let arr5 = ["EFG", arr3, 35000];
+        let complex = [arr1, arr2, arr3, arr4, arr5];
+        // définit la fonction
+        function search_array(tableau) {
+        // Boucle chaque élément du tableau
+        for ( i=0; i< tableau.length; i++) {
+        // si c'est un tableau il renvoi 'true' et affiche le nom
+        if (Array.isArray(tableau[i])){
+            Array(tableau[i])
+        // sinon il affiche dans la console le contenu 
+        } else{
+            console.log(tableau[i]);
+        }
+            }
+        }
+        search_array(complex)
+
+    </script>
+</body>
+</html>

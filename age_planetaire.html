@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age planétaire</title>
+  </head>
+  <body>
+    <script>
+
+      /*A partir des données astronomiques de révolution de chaque planète :
+
+      - Terre: periode orbitale 365.25 jours terrestres, 
+      - Mercure: periode orbitale 0.2408467 jours terrestres
+      - Venus: periode orbitale 0.61519726 jours terrestres
+      - Mars: periode orbitale 1.8808158 jours terrestres
+      - Jupiter: periode orbitale 11.862615 jours terrestres
+      - Saturne: periode orbitale 29.447498 jours terrestres
+      - Uranus: periode orbitale 84.016846 jours terrestres
+      - Neptune: periode orbitale 164.79132 jours terrestres
+
+      Determinez l'âge qu'aurait une personne sur une autre planète, 
+      par exemple quel age aurait une personne âgée de 1 000 000 000 secondes sur Terre => 31.69 ans
+
+      Utilisez : 
+      - une entrée texte pour entrer l'âge 
+      - un menu déroulant pour selectionner la planète 
+      et affichez en dessous l'âge correspondant
+      */
+
+      // tableau {value[key]}
+
+      let $planetes = {
+        Terre: 365.25,
+        Mercure: 0.24,
+        Venus: 0.61,
+        Mars: 1.88,
+        Jupiter: 11.86,
+        Saturne: 29.44,
+        Uranus: 84.01,
+        Neptune: 164.79,
+      };
+
+      let myage = window.prompt("Entrez votre age");
+      if (myage != "") {
+        // Faire le calcul
+        let $planete = "Mars";
+        let $result = myage / 3600 / 24 / $planetes[$planete];
+        document.write("Vous avez " + $result);
+      } else {
+        window.alert("Veuillez entrer votre âge: ");
+      }
+      
+    </script>
+  </body>
+</html>

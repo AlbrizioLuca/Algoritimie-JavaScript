@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Code</title>
+</head>
+<body>
+    <script>
+        // REMPLACER CHAQUE CARACTERE DANS UNE CHAINE PAR SON SUIVANT DANS L'ALPHABET
+// cette fonction donne le nombre positif ou negatif pour encoder ou decoder
+function caesar_code(chaine,encode,nombre) {
+    
+    if (encode == "e") {
+        return secret_code(nombre,chaine)
+        
+    }   else if (encode == "d"){
+        return secret_code(-nombre,chaine)
+    }
+}
+// cette fonction decale les caractères selon le nombre exprimé dans la fonction précedente
+function secret_code(decal,chaine) {
+    let result = '';
+    for (let i = 0; i < chaine.length; i++) {
+        // charCodeAt: récupère le code du caractère ayant l'index i dans le texte chaine
+        let charCodeActuel = chaine.charCodeAt(i);
+        // On récupère l'index du prochain caractère
+        let nouveauCharCode = charCodeActuel + decal;
+        // On utilise l'index pour retrouver le nouveau caractère dans l'alphabet que l'on ajoute au résultat
+        result += String.fromCharCode(nouveauCharCode);
+    }
+    return result;
+}
+let nb = 1
+let code = caesar_code('salut a toutes et a tous',"e",nb)
+console.log(code);
+console.log(caesar_code(code,"d",nb));
+    </script>
+</body>
+</html>

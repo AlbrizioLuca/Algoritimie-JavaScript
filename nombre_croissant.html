@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  ecrire une fonction JS pour vérifier qu'un entier donné > 100 comporte bien des chiffres en ordre croissant :
+        // 123 = true
+        // 132 = false
+
+        function nb_croissant(nombre) {
+        // transformation du nombre en chaine
+        nombre+="";
+        // transformation de la chaine en tableau
+        // avec chaque item étant un chiffre du nombre initial
+        let $array=nombre.split("")
+        // on boucle dans le tableau en paratnt du 2°chiffre
+        for (i=1; i < $array.length; i++) {
+        // si le chiffre avant le chiffre testé est > chiffre testé
+        // on quitte la fonction en retournant faux
+        if (parseInt($array[i-1]) > parseInt(array[i])) {
+            return false;
+        }
+        }
+        // sinon tous les chiffres sont dans l'ordre et on retourne vrai
+        return true;
+        }
+    </script>
+</body>
+</html>

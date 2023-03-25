@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimanches 1er Janvier</title>
+</head>
+<body>
+    <script>
+        // CALCULER LES ANNEES DONT LE 1er JANVIER EST UN DIMANCHE ENTRE LES ANNEES 2000 ET 2050. 
+
+        // Définir la fonction pour rechercher les dimanches 01/01
+        function sunday () {
+            let result = 0;
+            // Tableau qui va contenir les années ayant dimanche 01/01
+            let sundayYears = [];
+            // Definir la boucle avec i <51 car on veut aller jusqu'à 2050
+            for (let year = 2000; year < 2051; year++) {
+                // a chaque tour de boucle on change d'année
+                // on récupère la nouvelle date
+                let date = new Date(year, 00, 01);
+                // on récupere le jour J en sachant que dimanche =0 => samedi =6
+                let day = date.getDay();
+                // Si le 1er janvier est un dimanche alors on incrémente résultat
+                if (day == 0) {
+                    result += 1;
+                    // on ajoute l'année au tableau sundayYears
+                    sundayYears.push(year);
+                }
+            }
+            return [result, sundayYears];
+        }
+        // console.log('result', sunday());
+    </script>
+</body>
+</html>

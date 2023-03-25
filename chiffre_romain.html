@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="year-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertisseur en chiffre romain</title>
+</head>
+<body>
+<script language="JavaScript" type="text/javascript">
+    
+    function chiffre_romain(year) {
+        let resultat = "";
+        //  Premier cas qui isole les milliers
+        switch(parseInt((year % 10000) / 1000)) {
+            case 9: resultat+="IX";break;
+            case 8: resultat+="VMMM";break;
+            case 7: resultat+="VMM";break;
+            case 6: resultat+="VI";break;
+            case 5: resultat+="V";break;
+            case 4: resultat+="IV";break;
+            case 3: resultat+="MMM";break;
+            case 2: resultat+="MM";break;
+            case 1: resultat+="M";break;
+        }
+        //  Second case qui isole les centaines
+        switch(parseInt((year % 1000) / 100)) {
+            case 9: resultat+="CM";break;
+            case 8: resultat+="DCCC";break;
+            case 7: resultat+="DCC";break;
+            case 6: resultat+="DC";break;
+            case 5: resultat+="D";break;
+            case 4: resultat+="CD";break;
+            case 3: resultat+="CCC";break;
+            case 2: resultat+="CC";break;
+            case 1: resultat+="C";break;
+        }
+        //  Troisieme case qui isole les dizaines
+        switch(parseInt((year % 100) / 10)) {
+            case 9: resultat+="XC";break;
+            case 8: resultat+="LXXX";break;
+            case 7: resultat+="LXX";break;
+            case 6: resultat+="LX";break;
+            case 5: resultat+="L";break;
+            case 4: resultat+="XL";break;
+            case 3: resultat+="XXX";break;
+            case 2: resultat+="XX";break;
+            case 1: resultat+="year";break;
+        }
+        //  Dernier case qui isole les unités
+        switch(year % 10) {
+            case 9: resultat+="IX";break;
+            case 8: resultat+="VIII";break;
+            case 7: resultat+="VII";break;
+            case 6: resultat+="VI";break;
+            case 5: resultat+="V";break;
+            case 4: resultat+="IV";break;
+            case 3: resultat+="III";break;
+            case 2: resultat+="II";break;
+            case 1: resultat+="I";break;
+        }
+        //  Retourne le résultat obtenu après traitement de chaque chiffre composant l'année saisi
+        return document.write("L'année ", year, " s'écrit: ", resultat, " en chiffre romain");
+    }
+    // Appelle la fonction, et demande une saisie par le prompt
+    chiffre_romain(prompt('Veuillez saisir une année: '));
+    
+</script>
+</body>
+</html>
