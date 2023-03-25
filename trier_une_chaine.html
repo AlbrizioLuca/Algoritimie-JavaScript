@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trier une chaine</title>
+</head>
+<body>
+    <script>
+        // écrire une fonction JS pour supprimmer tous les caractères présents plus d'une fois dans une chaine (chiffre ou lettre ). la fonction retournera la chaine "nettoyée"
+        // Definir la chaine
+        let chaine="hn46jutjut1516jgk";
+        // Déclaration de la fonction
+        function tri(chaine_test) {
+        // Passer la chaine dans un tableau
+        let chaine_split=chaine_test.split("");
+        // Definir la variable de stockage
+        resultat="";
+        for (i=0; i < chaine_split.length; i++) {
+        // Premiere occurence de la lettre
+        let char_debut = chaine_test.indexOf(chaine_split[i]);
+        // Dernier occurence de la lettre
+        let char_fin = chaine_test.lastIndexOf(chaine_split[i]);
+        // Comparaison si présence une fois
+        if (char_debut == char_fin){
+            // s'il apparait une seule fois alors on stocke dans variable 'resultat'
+            resultat += chaine_split[i];
+        }
+        }
+        // Retourne le resultat
+        return resultat;
+        }
+        // Declaration de la variable, resultat de la fonction
+        let tri_final = tri(chaine);
+        // Afficher le resultat
+        console.log(tri_final);
+    </script>
+</body>
+</html>
