@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <img
+      id="card1"
+      src="img/carreau.png"
+      onclick="changeCard('card1', 'img/coeur.png', 'img/carreau.png')"
+    />
+    <img
+      id="card2"
+      src="img/trefle.png"
+      onclick="changeCard('card2', 'img/pique.png', 'img/trefle.png')"
+    />
+
+    <script>
+      function changeCard(cardId, newImage, originalImage) {
+        let card = document.getElementById(cardId);
+        if (card.src.endsWith(originalImage)) {
+          card.src = newImage;
+        } else {
+          card.src = originalImage;
+        }
+      }
+    </script>
+  </body>
+</html>
+
+<!-- 
+
+Voir documentation sur la méthode endsWith qui vérifie si la src se termine par la chaine de caractères fournie en argument
+
+https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith 
+
+-->
